@@ -10,6 +10,18 @@ import SwiftUI
 struct SportsSelectionView: View {
     @EnvironmentObject var viewModel: SportsViewModel
     @Binding var showSportsSelection: Bool
+
+    @State private var userSelectedSports: [AvailableSport] = []
+
+    private var userSelectedSportsBinding: Binding<[AvailableSport]> {
+        Binding(
+            get: { userSelectedSports },
+            set: { newValue in
+                userSelectedSports = newValue
+                viewModel.userSelectedSports = newValue
+            }
+        )
+    }
     
     var body: some View {
         NavigationView {
@@ -26,9 +38,13 @@ struct SportsSelectionView: View {
                     
                     LazyVGrid(columns: columns, alignment: .center, spacing: 16) {
                         ForEach(viewModel.availableSports) { sport in
-                            SportSelectionCell(sport: sport, isSelected: viewModel.userSelectedSports.contains(sport))
+                            SportSelectionCell(sport: sport, isSelected: userSelectedSports.contains(sport))
                                 .onTapGesture {
-                                    viewModel.selectSport(sport: sport)
+                                    if userSelectedSports.contains(sport) {
+                                        userSelectedSports.removeAll { $0.id == sport.id }
+                                    } else if userSelectedSports.count < 3 {
+                                        userSelectedSports.append(sport)
+                                    }
                                 }
                         }
                     }
@@ -38,20 +54,27 @@ struct SportsSelectionView: View {
                 Spacer()
                 
                 Button("Done") {
-                    showSportsSelection = false
-                    viewModel.saveSelectedSports()
+                    if userSelectedSports.count > 0 {
+                        viewModel.userSelectedSports = userSelectedSports
+                        viewModel.saveSelectedSports()
+                        showSportsSelection = false
+                    }
                 }
-                .disabled(viewModel.userSelectedSports.count == 0)
                 .padding()
             }
             .navigationBarTitle("Sports Preferences", displayMode: .inline)
             .background(Color.white.edgesIgnoringSafeArea(.all))
+            .onAppear {
+                userSelectedSports = viewModel.userSelectedSports
+            }
         }
     }
 }
 
+
+
 struct SportSelectionCell: View {
-    var sport: Sport
+    var sport: AvailableSport
     var isSelected: Bool
     
     var body: some View {

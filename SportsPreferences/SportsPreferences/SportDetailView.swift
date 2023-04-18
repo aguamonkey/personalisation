@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SportDetailView: View {
-    var sport: Sport
+    var sport: AvailableSport
 
     var body: some View {
         VStack {
@@ -20,6 +20,6 @@ struct SportDetailView: View {
 
 struct SportDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        SportDetailView(sport: Sport(id: 0, name: "Soccer", iconName: "soccer"))
+        SportDetailView(sport: AvailableSport(id: 0, name: "Soccer", iconName: "soccer"))
     }
 }

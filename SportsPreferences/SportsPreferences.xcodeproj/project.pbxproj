@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6224EAB029EE9ED6000272B9 /* SportsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6224EAAF29EE9ED6000272B9 /* SportsModel.swift */; };
 		624E4B5329DC1E4D0009266D /* SportsPreferencesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624E4B5229DC1E4D0009266D /* SportsPreferencesApp.swift */; };
 		624E4B5529DC1E4D0009266D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624E4B5429DC1E4D0009266D /* ContentView.swift */; };
 		624E4B5729DC1E4E0009266D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 624E4B5629DC1E4E0009266D /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6224EAAF29EE9ED6000272B9 /* SportsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsModel.swift; sourceTree = "<group>"; };
 		624E4B4F29DC1E4D0009266D /* SportsPreferences.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsPreferences.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		624E4B5229DC1E4D0009266D /* SportsPreferencesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsPreferencesApp.swift; sourceTree = "<group>"; };
 		624E4B5429DC1E4D0009266D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				624E4B9929DC4E040009266D /* SportDetailView.swift */,
 				624E4B9B29DC4E2C0009266D /* MoreView.swift */,
 				624E4B9D29DC4E4B0009266D /* SportsViewModel.swift */,
+				6224EAAF29EE9ED6000272B9 /* SportsModel.swift */,
 			);
 			name = "App Template";
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6224EAB029EE9ED6000272B9 /* SportsModel.swift in Sources */,
 				624E4B5529DC1E4D0009266D /* ContentView.swift in Sources */,
 				624E4B9C29DC4E2C0009266D /* MoreView.swift in Sources */,
 				624E4B9A29DC4E040009266D /* SportDetailView.swift in Sources */,

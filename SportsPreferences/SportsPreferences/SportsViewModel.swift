@@ -2,6 +2,8 @@ import SwiftUI
 import Combine
 
 class SportsViewModel: ObservableObject {
+    private let firestoreService = FirestoreService()
+
     @Published var availableSports: [AvailableSport] = Sports.allCases.map { $0.sport }
     @Published var userSelectedSports: [AvailableSport] = []
     @Published var initialSelectionCompleted: Bool = false
@@ -25,7 +27,18 @@ class SportsViewModel: ObservableObject {
             UserDefaults.standard.set(encoded, forKey: userDefaultsKey)
         }
         initialSelectionCompleted = true
+
+        // Update Firestore with user's sports preferences
+        firestoreService.trackUserPreferences(userPreferences: userSelectedSports) { result in
+            switch result {
+            case .success:
+                print("Successfully updated user sports preferences in Firestore.")
+            case .failure(let error):
+                print("Error updating user sports preferences in Firestore: \(error)")
+            }
+        }
     }
+
     
     func loadSelectedSports() {
         if let data = UserDefaults.standard.data(forKey: userDefaultsKey),

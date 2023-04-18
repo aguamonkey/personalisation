@@ -11,6 +11,14 @@ struct AvailableSport: Identifiable, Codable, Equatable {
     let id: Int
     let name: String
     let iconName: String
+    
+    func dictionaryRepresentation() -> [String: Any] {
+        return [
+            "id": id,
+            "name": name,
+            "iconName": iconName
+        ]
+    }
 }
 
 enum Sports: Int, CaseIterable {

@@ -11,6 +11,7 @@
 		3E7B59345A974B0BB083C5BB /* Pods_SportsPreferences.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 061E75145C894B5861FAAA39 /* Pods_SportsPreferences.framework */; };
 		4E8924FEFB09E6411C502EF9 /* Pods_SportsPreferences_SportsPreferencesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADCED6406D08DF79A9C65F3D /* Pods_SportsPreferences_SportsPreferencesUITests.framework */; };
 		620C969229EEC09900F905D7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 620C969129EEC09900F905D7 /* GoogleService-Info.plist */; };
+		620C969529EEC34200F905D7 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620C969429EEC34200F905D7 /* FirestoreService.swift */; };
 		6224EAB029EE9ED6000272B9 /* SportsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6224EAAF29EE9ED6000272B9 /* SportsModel.swift */; };
 		624E4B5329DC1E4D0009266D /* SportsPreferencesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624E4B5229DC1E4D0009266D /* SportsPreferencesApp.swift */; };
 		624E4B5529DC1E4D0009266D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624E4B5429DC1E4D0009266D /* ContentView.swift */; };
@@ -48,6 +49,7 @@
 		061E75145C894B5861FAAA39 /* Pods_SportsPreferences.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportsPreferences.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C3C82020D562EE851376FF /* Pods-SportsPreferencesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportsPreferencesTests.release.xcconfig"; path = "Target Support Files/Pods-SportsPreferencesTests/Pods-SportsPreferencesTests.release.xcconfig"; sourceTree = "<group>"; };
 		620C969129EEC09900F905D7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		620C969429EEC34200F905D7 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		6224EAAF29EE9ED6000272B9 /* SportsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsModel.swift; sourceTree = "<group>"; };
 		624E4B4F29DC1E4D0009266D /* SportsPreferences.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsPreferences.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		624E4B5229DC1E4D0009266D /* SportsPreferencesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsPreferencesApp.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		620C969329EEC10800F905D7 /* Firestore */ = {
 			isa = PBXGroup;
 			children = (
+				620C969429EEC34200F905D7 /* FirestoreService.swift */,
 			);
 			path = Firestore;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				624E4B9829DC4DE10009266D /* HomeView.swift in Sources */,
 				624E4B9E29DC4E4B0009266D /* SportsViewModel.swift in Sources */,
 				624E4B5329DC1E4D0009266D /* SportsPreferencesApp.swift in Sources */,
+				620C969529EEC34200F905D7 /* FirestoreService.swift in Sources */,
 				624E4B9629DC4D210009266D /* SportsSelectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
